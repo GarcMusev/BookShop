@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+   <link rel="stylesheet" type="text/css" href="{% static 'Books/book_review_edit_style.css' %}">
+{% endblock %}
+
+{% block title %}Book review edit{% endblock %}
+
+{% block content %}
+    <img id="logo" src="{% static 'Books/YLBD_mit_schrift.png'%}">
+
+    <h1 id="caption">Edit your review </h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.text}}
+        <br><br>
+        <b id="stars">Stars</b><br>{{ form.star_rating }}
+        <br><br><br>
+        <button id="review_btn" type="submit">Submit</button>
+    </form>
+
+{% endblock %}

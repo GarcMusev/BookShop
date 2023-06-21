@@ -1,0 +1,160 @@
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet"  href="{% static 'Books/book_detail_style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="top_introduction">
+        <h2>Book detail</h2>
+        <img id="logo" src="{% static 'Books/YLBD_mit_Schrift.png' %}">
+        <img id="book_cover" src="{{ that_one_book.book_picture.url }}"><br><br>
+
+        <b id="title">{{ that_one_book.title }}</b>
+
+        <div class="logout">
+            <a id="shopping_cart" style="color: #cb997e" href="{% url 'shopping-cart-show' %}">
+                            Shopping Cart(
+                            {% if user.is_authenticated %}
+                               {{ request.user.count_shopping_cart_items }}
+                            {% else %}
+                                0
+                            {% endif %}
+                             )
+                        </a>
+            <p id="username">Hi {{ user.username }}!</p>
+            <button id="back_btn"><a style="color: #cb997e; text-decoration: none" href={% url 'home' %}>Home</a></button><br>
+            <a href="{% url 'book-list' %}">  <button id="runderButton" style="color: #cb997e">Book List</button><br>
+            <button id="logout_btn"><a style="text-decoration: none; color: #cb997e" href="{% url 'logout' %}">Logout</a></button>
+        </div>
+    </div>
+
+    <img id="book" src="{% static 'Books/blank_book_brown.png' %}">
+
+    <div class="description">
+        <img src="{% static 'Books/paper_sheet.png' %}">
+        <b style="text-decoration: underline">Description</b><br>
+        <b id="information">{{ that_one_book.description }}</b>
+    </div>
+
+
+
+    <div class="details">
+        <table id="table">
+        <tr>
+            <th><b>Subtitle:</b></th>
+            <td>{{ that_one_book.subtitle }}<br></td>
+        </tr>
+        <tr>
+            <th><b>Author:</b></th>
+            <td>{{ that_one_book.author }}<br></td>
+        </tr>
+        <tr>
+            <th><b>Genre:</b></th>
+            <td>{{ that_one_book.get_genre_display }}<br></td>
+        </tr>
+        <tr>
+            <th><b>Type:</b></th>
+            <td>{{ that_one_book.get_type_display }}<br></td>
+        </tr>
+        <tr>
+            <th><b>Price:</b></th>
+            <td>{{ that_one_book.price|stringformat:".2f" }}$<br></td>
+        </tr>
+            </tr>
+        <tr>
+            <th><b>Pages:</b></th>
+            <td>{{ that_one_book.pages }}<br></td>
+        </tr>
+        <tr>
+            <th><b>Published on:</b></th>
+            <td>{{ that_one_book.date_published }}<br></td>
+        </tr>
+        <tr>
+            <th><b>Entered by:</b></th>
+            <td>{{ that_one_book.myuser }}<br></td>
+        </tr>
+        <tr>
+            <th><b>Created on:</b></th>
+            <td>{{ that_one_book.creation_time }}<br></td>
+        </tr>
+        <tr>
+             <th><b>Average Rating:</b></th>
+             <td>{{ Number_of_stars }} Stars<br></td>
+     </tr>
+        </table>
+    </div>
+    <br>
+
+    <div class="pdf_shoppingcart">
+
+        <b id="pdf">Click <a id="pdf_link" style="color: #5c2501" href="{{ that_one_book.book_pdf.url }}" target="_new">here</a> for the pdf</b>
+        <br><br>
+        {% if user.is_authenticated %}
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                <button id="shopping_cart" type="submit" name="add">Add to shopping cart</button>
+            </form>
+        {% else %}
+            <br><a href="{% url 'login' %}">Login</a> to add to shopping cart
+            <br>
+        {% endif %}
+    </div>
+
+    <br><br>
+
+     <img id="paper_sheet" src="{% static 'Books/paper_sheet.png' %}">
+
+    <div class="review_list">
+        <div class="frame_for_review">
+            {% for review in reviews_for_that_one_book %}
+                <hr>
+                <img id="user_img" src="{{ review.myuser.profile_picture.url }}">
+                <br>
+                <b style="color: #8c603b">{{ review.myuser.username }} on {{ review.timestamp }}
+                <br>
+            {% for i in "x"|ljust:review.star_rating %}
+                <img src="{% static 'Books/Red_Star.svg.png' %}"  height="20" width="20">
+            {% endfor %}</b>
+                <br>
+                {{ review.text }}
+                <br>
+                <span style="color: darkgreen">{{ review.get_upvotes_count }}</span>
+                <a href="{% url 'book-review-vote' review.id 'up' %}" style="text-decoration: none">
+                <img src="{% static 'Books/arrow_up.png' %}" height="20" width="20">
+                </a>
+                <span style="color: darkred">{{ review.get_downvotes_count }}</span>
+                <a href="{% url 'book-review-vote' review.id 'down' %}" style="text-decoration: none">
+                <img src="{% static 'Books/arrow_up.png' %}" height="20" width="20" style="transform:rotate(180deg)">
+                </a>
+                    {% if myuser == review.myuser %}
+                        <a href={% url 'book-review-delete' review.pk %}> <img src="{% static 'Books/bin.png' %}"height="20" width="30"></a>
+                        <a href="{% url 'book-review-edit' pk=that_one_book.id pkReview=review.id %}"><img src="{% static 'Books/editicon.png'%}" height="20" width="20"></a>
+                    {% endif %}
+        <br><br>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="review">
+        {% if review_form.as_p %}
+            <b id="question">Share your opinion with us!</b><br>
+            <form method="POST">
+                {% csrf_token %}
+                <br>
+                <b id="review">Type it in here</b>{{ review_form.text}}
+                <br><br>
+               <b id="stars">Stars</b><br><br>{{ review_form.star_rating }}
+                <br>
+            <button id="review_btn" type="submit" name="edit">Add Review</button>
+        </form>
+    {% endif %}
+    </div>
+    <br><br>
+{% endblock %}

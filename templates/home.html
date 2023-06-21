@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+   <link rel="stylesheet" type="text/css" href="{% static 'css/home_style1.css' %}">
+{% endblock %}
+
+{% block title %}YLBS Home{% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        {% block logged_in_content %}
+                <div class="welcome" id="introduction">
+                    <h3 id="top" style="text-decoration: underline" >Welcome to </h3>
+                    <h3 id="sub" style="text-decoration: underline">Your Local Book Dealer!</h3>
+                    <img src="{% static 'Books/YLBD_ohne_Schrift.png' %}">
+                </div>
+                <div class="logout">
+                   <a id="shopping_cart" style="color: #cb997e" href="{% url 'shopping-cart-show' %}">
+                       Shopping Cart(
+                        {% if user.is_authenticated %}
+                               {{ request.user.count_shopping_cart_items }}
+                        {% else %}
+                            0
+                        {% endif %}
+                        )
+                    </a>
+                    <p id="username"> Hi {{ user.username }}!</p>
+                    <button id="logout_btn"><a style="color: #cb997e; text-decoration: none" href="{% url 'logout' %}">Logout</a></button>
+                </div>
+
+            <img id="shelf_left1"src="{% static 'Books/library_shelf.png' %}">
+            <img id="shelf_right1"src="{% static 'Books/library_shelf.png' %}">
+
+            <img id="shelf_left2"src="{% static 'Books/library_shelf.png' %}">
+            <img id="shelf_right2"src="{% static 'Books/library_shelf.png' %}">
+
+            <img id="shelf_left3"src="{% static 'Books/library_shelf.png' %}">
+            <img id="shelf_right3"src="{% static 'Books/library_shelf.png' %}">
+
+            <img id="shelf_left4"src="{% static 'Books/library_shelf.png' %}">
+            <img id="shelf_right4"src="{% static 'Books/library_shelf.png' %}">
+
+            <div class="menue">
+                <div class="shelf1">
+                    <button><a style="color: #cb997e; text-decoration: none" href="{% url 'books-search' %}">Search</a></button>
+                    <img src="{% static 'Books/shelf.png' %}" >
+                </div>
+                <div class="shelf2">
+                    <button><a style="color: #cb997e; text-decoration: none"href="{% url 'book-list' %}">Book List</a></button>
+                    <img src="{% static 'Books/shelf.png' %}" >
+                </div>
+                <div class="shelf3">
+                     <button><a style="color: #cb997e; text-decoration: none" href="{% url 'myuser-list' %}">User List</a></button>
+                     <img src="{% static 'Books/shelf.png' %}">
+                </div>
+
+                {% if user.can_delete %}
+                    <div class="shelf4">
+                         <button><a style="color: #cb997e; text-decoration: none" href="{% url 'review-delete' %}">Edit Reviews</a></button>
+                         <img src="{% static 'Books/shelf.png' %}">
+                    </div>
+                    <div class="shelf5">
+                         <button><a style="color: #cb997e; text-decoration: none" href="{% url 'book-delete' %}">Edit Books</a></button>
+                        <img src="{% static 'Books/shelf.png' %}">
+                    </div>
+                    <div class="shelf6">
+                         <button><a style="color: #cb997e; text-decoration: none" href="{% url 'book-create' %}">Add a book</a></button>
+                        <img src="{% static 'Books/shelf.png' %}">
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endblock %}
+    {% else %}
+        {% block not_logged_in_content %}
+            <div class="login_fail">
+                <img id="logo" src="{% static 'Books/YLBD_mit_Schrift.png' %}">
+                <div class="message">
+                    <br>
+                   <p id="alert">Sorry, but you are not logged in!</p>
+                </div>
+
+                <div class="options">
+                    <p>Click <a style="color: black;" href="{% url 'login' %}">here</a> to login</p>
+                    <p id="or">or</p>
+                    <p>Click <a style="color: black" href="{% url 'signup' %}">here</a> to signup</p>
+                </div>
+                 <img src="{% static 'Books/error.png' %}" width="100" height="100">
+            </div>
+        {% endblock %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,82 @@
+body{
+    background-color: #606C38;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    text-align: center;
+}
+
+img#logo{
+    width: 300px;
+    height: auto;
+    position: absolute;
+    left: -20px;
+    top: 10px;
+}
+
+.logout{
+    width: 250px;
+    height: 200px;
+    margin-right: 0px;
+    position: absolute;
+    right:0px;
+    top: 10px;
+}
+
+.logout p#username{
+    border: 3px solid #553922;
+    border-radius: 20px;
+    width: 100px;
+    background-color: #fefae0;
+    color: #8c603b;
+    font-size: 20px;
+    position: relative;
+    left: 120px;
+    top: 5px;
+
+}
+
+.logout button#logout_btn {
+    border: 3px solid #553922;
+    background-color: #fefae0;
+    border-radius: 20px;
+    font-size: 15px;
+    position: relative;
+    left: 50px;
+    cursor: pointer;
+    top: -20px;
+}
+
+.logout button#back_btn{
+    border: 3px solid #553922;
+    background-color: #fefae0;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 80px;
+    position: relative;
+    left: 50px;
+    top: -7px;
+    cursor: pointer;
+}
+
+h2{
+    font-size: 100px;
+    margin-top: 0px;
+    color: #fefae0;
+}
+
+
+div#single_user{
+    border: 3px solid black;
+}
+
+hr{
+    width: 600px;
+    border: 2px solid #283618;
+}
+
+button{
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #5c2501;
+}

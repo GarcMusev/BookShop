@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Books/search_style.css' %}">
+{% endblock %}
+
+{% block title %}Search book{% endblock %}
+
+{% block content %}
+
+{% block logged_in_content %}
+     <div class="logout">
+         <a id="shopping_cart" style="color: #cb997e; text-decoration: none" href="{% url 'shopping-cart-show' %}">
+                            Shopping Cart(
+                            {% if user.is_authenticated %}
+                               {{ request.user.count_shopping_cart_items }}
+                            {% else %}
+                                0
+                            {% endif %}
+                             )
+         </a>
+         <p id="username">Hi {{ user.username }}!</p>
+         <button id="back_btn"><a style="color: #cb997e; text-decoration: none" href={% url 'home' %}>Home</a></button></p>
+         <button id="logout_btn"><a style="color: #cb997e; text-decoration: none" href="{% url 'logout' %}">Logout</a></button>
+     </div>
+
+    <div class="search_field">
+        <img id="logo" src="{% static 'Books/YLBD_mit_schrift.png' %}">
+        <h2>Search for a book</h2>
+        <img id="lupe" src="{% static 'Books/lupe.png' %}">
+
+        <img id="shelf_left"src="{% static 'Books/library_shelf.png' %}">
+        <img id="shelf_right"src="{% static 'Books/library_shelf.png' %}">
+        <hr>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="fields">
+                <p>Title: {{ form.title }}</p>
+                <p>Description: {{ form.description }}</p>
+                <p>Review Rating: {{ form.review_rating }}</p>
+                <button id="search_btn" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+    {% if show_results %}
+        <div class="results">
+         <b id="book_found"></b><br>
+         {% for book in books_found %}
+             <li>
+                <div class="book_info">
+                    <img src="{% static 'Books/blank_book_brown.png' %}">
+                    <a style="color: #fefae0" href="{% url 'book-detail' book.id %}"><b>{{ book.title }}</b></a>
+                        <p>{{ book.author }}</p>
+                        <p>{{ book.get_type_display }}</p>
+                        <p>{{ book.pages }} pages</p>
+                        <p>{{ book.review_rating }} Star Rating</p>
+                </div>
+             </li>
+        {% endfor %}
+        </div>
+
+    {% endif %}
+{% endblock %}
+
+{% endblock %}

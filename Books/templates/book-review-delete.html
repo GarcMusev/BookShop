@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Books/book_review_delete_style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <img id="logo" src="{% static 'Books/YLBD_mit_schrift.png'%}">
+
+<form method="POST">{% csrf_token %}
+    <p id="question">Are you sure you want to delete that Review <b style="color: #5c2501">{{ that_one_review.myuser.username }}</b>?<br>
+    <h1> "{{ that_one_review.text }}"</h1></p>
+
+    <button type="submit">Yes!</button>
+    <a href={% url 'book-detail' that_one_review.get_bookid_from_review %}><button>No!</button></a>
+</form>
+
+{% endblock %}

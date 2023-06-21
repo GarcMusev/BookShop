@@ -1,0 +1,35 @@
+body{
+    background-color: #606C38;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    text-align: center;
+}
+
+img#logo{
+    width: 300px;
+    height: auto;
+}
+
+h1{
+    font-size: 100px;
+    color: #fefae0;
+    margin: 0px;
+}
+
+button#review_btn{
+    background-color: #fefae0;
+    border: 4px solid #553922;
+    border-radius: 20px;
+    font-size: 30px;
+    color: #8c603b;
+    padding: 5px;
+}
+
+button:hover{
+    background-color: #5c2501;
+}
+
+b#stars{
+    color: #fefae0;
+    font-size: 25px;
+}
+

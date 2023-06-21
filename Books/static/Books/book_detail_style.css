@@ -1,0 +1,301 @@
+body{
+    background-color: #606C38;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+b#title{
+    color: #fefae0;
+    font-size: 90px;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: black;
+    position: relative;
+    top: -30px;
+}
+
+.top_introduction h2{
+    font-size: 100px;
+    color: #fefae0;
+    margin: 0px;
+    text-align: center;
+}
+
+.top_introduction img#logo{
+    width: 25%;
+    height: auto;
+    position: absolute;
+    left: -30px;
+    top: 0px;
+}
+
+
+.top_introduction img#book_cover{
+    border-radius: 10%;
+    border: 1px solid #cb997e;
+    max-width: 400px;
+    height: 400px;
+}
+
+.logout{
+    width: 250px;
+    height: 200px;
+    margin-right: 0px;
+    position: absolute;
+    right:20px;
+    top: 10px;
+}
+
+.logout a#shopping_cart{
+    border: 3px solid #553922;
+    border-radius: 20px;
+    background-color: #fefae0;
+    position: relative;
+    left: 80px;
+    padding: 5px;
+
+}
+
+.logout p#username{
+    border: 3px solid #553922;
+    border-radius: 20px;
+    text-align: center;
+    width: 120px;
+    background-color: #fefae0;
+    color: #8c603b;
+    font-size: 30px;
+    position: relative;
+    left: 146px;
+    margin-bottom: 0px;
+    margin-top: 15px;
+}
+
+.logout button#logout_btn {
+
+    position: relative;
+    left: 82px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.logout button#back_btn{
+
+    width: 100px;
+    position: relative;
+    left: 82px;
+    top: 0px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+button{
+    border: 3px solid #553922;
+    border-radius: 20px;
+    background-color: #fefae0;
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+img#book{
+    width: 400px;
+    height: auto;
+    position: relative;
+    bottom: 80px;
+    margin-top: 50px;
+
+}
+
+.description{
+    width: 330px;
+    height: 500px;
+    position: relative;
+    left: 850px;
+    bottom: 460px;
+}
+
+.description img{
+    width: 500px;
+    height: auto;
+    position: absolute;
+    bottom: -20px;
+    left: -58px;
+}
+
+.description b{
+    position: relative;
+    bottom: 80px;
+    left: 30px;
+    font-size: 40px;
+
+}
+
+.description b#information{
+    position: relative;
+    right: 80px;
+    font-size: 20px;
+}
+
+.details{
+    border: 2px solid white;
+    max-width: 250px;
+    position: relative;
+    left: 490px;
+    bottom: 980px;
+
+}
+
+table tr:nth-child(1){
+    background-color: #fefae0;
+}
+
+table tr:nth-child(2){
+    background-color: #cb997e;
+}
+
+table tr:nth-child(3){
+    background-color: #fefae0;
+}
+
+table tr:nth-child(4){
+    background-color: #cb997e;
+}
+
+table tr:nth-child(5){
+    background-color: #fefae0;
+}
+
+table tr:nth-child(6){
+    background-color: #cb997e;
+}
+
+table tr:nth-child(7){
+    background-color: #fefae0;
+}
+
+table tr:nth-child(8){
+    background-color: #cb997e;
+}
+
+table tr:nth-child(9){
+    background-color: #fefae0;
+}
+
+table tr:nth-child(10){
+    background-color: #cb997e;
+}
+
+.pdf_shoppingcart b#pdf{
+    position: relative;
+    bottom: 780px;
+    left: 420px;
+    font-size: 20px;
+    padding: 5px;
+    border: 3px solid #553922;
+    border-radius: 30px;
+    background-color: #fefae0;
+}
+
+.pdf_shoppingcart button#shopping_cart{
+    padding: 5px;
+    border: 3px solid #553922;
+    border-radius: 30px;
+    position: relative;
+    bottom: 800px;
+    left: 420px;
+}
+
+.review{
+    width: 350px;
+    height: 500px;
+    position: relative;
+    left: 430px;
+    bottom: 1150px;
+    margin-left: 20px;
+}
+
+.review b#review{
+    font-size: 20px;
+    color: #fefae0;
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+.review b#stars{
+    font-size: 30px;
+    color: #fefae0;
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+.review_list{
+    font-size: 20px;
+    position: absolute;
+    top: 1010px;
+    left: 60px;
+}
+
+.review_list img#user_img{
+    width: 50px;
+    height: auto;
+}
+
+img#paper_sheet{
+    width: 500px;
+    height: 1000px;
+    position: absolute;
+    top: 620px;
+    left: -30px;
+}
+
+.review b#question{
+    color: #fefae0;
+    font-size: 25px;
+    position: relative;
+}
+
+hr{
+    position: relative;
+    left: 0px;
+    width: 300px;
+    border: 1px solid #283618;
+    border-radius: 30px;
+}
+
+button#review_btn{
+    position: relative;
+    top: 30px;
+    padding: 5px;
+    border: 3px solid #553922;
+    border-radius: 30px;
+    background-color: #fefae0;
+}
+
+button:hover{
+    background-color: #8c603b;
+}
+
+.frame_for_review{
+    width: 400px;
+    height: 1000px;
+    position: relative;
+    left: -40px;
+    top: -330px;
+}
+
+button#runderButton{
+    margin: 9px;
+    margin-bottom: 0px;
+    position: relative;
+    left: 82px;
+}
+
+
+
+
+
+
+
+

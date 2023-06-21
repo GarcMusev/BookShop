@@ -1,0 +1,124 @@
+body{
+    background-color: #606C38;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+img#logo{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top:0px;
+    left: -30px;
+
+}
+
+h2#überschrift{
+    color: #fefae0;
+    font-size: 130px;
+    margin-top: 0px;
+}
+
+.logout{
+    width: 250px;
+    height: 200px;
+    margin-right: 0px;
+    position: absolute;
+    right:20px;
+    top: 10px;
+}
+
+.logout a#shopping_cart{
+     border: 3px solid #553922;
+    border-radius: 20px;
+    background-color: #fefae0;
+    position: relative;
+    left: 55px;
+    padding: 5px;
+
+}
+
+.logout p#username{
+     border: 3px solid #553922;
+    border-radius: 20px;
+    width: 120px;
+    background-color: #fefae0;
+    color: #8c603b;
+    font-size: 30px;
+    position: relative;
+    left: 120px;
+    margin-bottom: 0px;
+    margin-top: 15px;
+
+}
+
+.logout button#logout_btn {
+     border: 3px solid #553922;
+    border-radius: 20px;
+    position: relative;
+    left: 55px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.logout button#back_btn{
+    border: 3px solid #553922;
+    border-radius: 20px;
+    width: 100px;
+    position: relative;
+    left: 55px;
+    top: 0px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button{
+    background-color: #fefae0;
+    padding: 10px;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: #8c603b;
+}
+
+.results{
+    position: relative;
+}
+
+.book_info{
+    display: inline-grid;
+    height: 400px;
+}
+
+.book_info a{
+    font-size: 25px;
+    font-style: italic;
+    position: relative;
+    top: -350px;
+    left: -30px;
+}
+
+.book_info p{
+    font-size: 25px;
+    color: white;
+    position: relative;
+    top: -360px;
+    left: -30px;
+}
+
+.book_info img#book{
+    width: 350px;
+    height: 450px;
+}
+
+.book_info img#this_book{
+    border: 2px solid #553922;
+    border-radius: 30px;
+    position: relative;
+    top: -370px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+}

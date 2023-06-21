@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/shopping_cart_style.css'%}">
+{% endblock %}
+
+{% block title %}Shopping cart{% endblock %}
+
+{% block content %}
+<h2>Shopping cart</h2>
+    <img id="logo" src="{% static 'Books/YLBD_mit_schrift.png' %}">
+        <div class="logout">
+            <p id="username">Hi {{ user.username }}!</p>
+            <button id="back_btn"><a style="color: #cb997e; text-decoration: none" href={% url 'home' %}>Home</a></button></p>
+            <button id="logout_btn"><a style="color: #cb997e; text-decoration: none" href="{% url 'logout' %}">Logout</a></button>
+        </div>
+
+
+    {% if shopping_cart_is_empty %}
+        <b id="no_items">Your shopping cart is empty :(</b><br>
+    {% else %}
+        {% for item in shopping_cart_items %}
+            <div class="book_info">
+                {{ item.picture}}
+                {{ item.product_name }}
+                <b id="item_price">{{ item.price }} $ x {{ item.quantity }}</b>
+            <br>
+            </div>
+        {% endfor %}
+        <br><br>
+        Total amount: <b id="total">{{ total }} $</b>
+        <br><br>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button id="empty_btn" type="submit" name="empty">Empty the shopping cart</button><br>
+            <button id="submit_btn" type="submit" name="pay">Pay with credit card</button>
+        </form>
+    {% endif %}
+{% endblock %}

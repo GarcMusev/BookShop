@@ -1,0 +1,96 @@
+body{
+    background-color: #606C38;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    text-align: center;
+}
+
+h2{
+    font-size: 100px;
+    color: #fefae0;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+img#logo{
+    width: 300px;
+    height: auto;
+    position: fixed;
+    left: -20px;
+    top: 10px;
+}
+
+.logout{
+    width: 250px;
+    height: 200px;
+    margin-right: 0px;
+    position: fixed;
+    right:0px;
+    top: 10px;
+}
+
+.logout p#username{
+    border: 3px solid #553922;
+    border-radius: 20px;
+    width: 100px;
+    background-color: #fefae0;
+    color: #8c603b;
+    font-size: 20px;
+    position: relative;
+    left: 120px;
+    top: 5px;
+
+}
+
+.logout button#logout_btn {
+    border: 3px solid #553922;
+    background-color: #fefae0;
+    border-radius: 20px;
+    font-size: 15px;
+    position: relative;
+    left: 50px;
+    cursor: pointer;
+    top: -20px;
+}
+
+.logout button#back_btn{
+    border: 3px solid #553922;
+    background-color: #fefae0;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 80px;
+    position: relative;
+    left: 50px;
+    top: -7px;
+    cursor: pointer;
+}
+
+p{
+    color: #fefae0;
+}
+
+.right_side_descr{
+    color: #fefae0;
+    position: absolute;
+    top:300px;
+    right: 100px;
+}
+
+.left_side_descr{
+    color: #fefae0;
+    position: absolute;
+    right: 130px;
+    top: 180px;
+}
+
+button#add{
+    background-color: #fefae0;
+    border: 2px solid #553922;
+    border-radius: 40px;
+    font-size: 35px;
+    color: #cb997e;
+    padding: 15px;
+}
+
+button:hover{
+    background-color: #5c2501;
+}

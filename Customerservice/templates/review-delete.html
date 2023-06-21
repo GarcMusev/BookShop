@@ -1,0 +1,45 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/review_delete_style.css' %}">
+{% endblock %}
+
+
+{% block title %}Review delete{% endblock %}
+
+{% block logged_in_content %}
+<h2>Review delete</h2>
+    <img id="logo" src="{% static 'Books/YLBD_mit_Schrift.png' %}">
+
+        <div class="logout">
+            <p id="username">Hi {{ user.username }}!</p>
+            <button id="back_btn"><a style="color: #cb997e; text-decoration: none" href={% url 'home' %}>Home</a></button></p>
+            <button id="logout_btn"><a style="color: #cb997e; text-decoration: none" href="{% url 'logout' %}">Logout</a></button>
+        </div>
+
+    {% if not can_delete %}
+        You are not authorized to delete reviews.<br><br>
+    {% endif %}
+
+    {% for review in all_the_reviews %}
+        <div clas="single_user">
+        <hr>
+            <img src="{{ review.myuser.profile_picture.url }}" width="100" height="auto"> <br>
+            <b style="color: #fefae0"><u>{{ review.myuser.username }}</u> on {{ review.timestamp }}</b><br>
+            {{ review.text }}<br>
+            {% if can_delete %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" id="review_id" name="review_id" value="{{ review.id }}">
+                    <button style="border: 2px solid #553922; border-radius: 30px; background-color: #fefae0; color: #cb997e; font-size: 20px" type="submit" name="delete">Delete</button>
+                    <button style="border: 2px solid #553922; border-radius: 30px; background-color: #fefae0; font-size: 20px"><a style="color: #cb997e; text-decoration: none;" href="{% url 'review-edit' pk=review.id %}">Edit</a></button>
+                </form>
+         </div>
+            {% endif %}
+    {% endfor %}
+    <hr>
+
+    <br>
+{% endblock %}

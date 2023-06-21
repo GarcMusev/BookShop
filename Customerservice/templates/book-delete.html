@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/book_delete_style.css' %}">
+{% endblock %}
+
+{% block title %}Book delete{% endblock %}
+
+{% block logged_in_content %}
+<h2>Book delete</h2>
+    <img id="logo" src="{% static 'Books/YLBD_mit_Schrift.png' %}">
+        <div class="logout">
+            <p id="username">Hi {{ user.username }}!</p>
+            <button id="back_btn"><a style="color: #cb997e; text-decoration: none" href={% url 'home' %}>Home</a></button></p>
+            <button id="logout_btn"><a style="color: #cb997e; text-decoration: none" href="{% url 'logout' %}">Logout</a></button>
+        </div>
+
+    {% if not can_delete %}
+        You are not authorized to delete books.<br><br>
+    {% endif %}
+
+    {% for book in all_the_books %}
+
+        <div class="single_book">
+
+            <img id="brown_book" src="{% static 'Books/blank_book_brown.png' %}">
+
+
+            <div class="information">
+                <a id="title" href="{{ book.id }}/"> <b>{{ book.title }}</b></a><br>
+                <img id="book_img" src="{{ book.book_picture.url }}"><br>
+                <b id="details">Author: {{ book.author }} <br> Type: {{ book.get_type_display }} <br> Pages: {{ book.pages }} pages</b><br>
+                <br>
+
+                {% if can_delete %}
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" id="book_id" name="book_id" value="{{ book.id }}">
+                        <button id="delete_btn" type="submit" name="delete">Delete</button>
+                        <button id="edit_btn"><a style="color: #cb997e; text-decoration: none" href="{% url 'book-edit' pk=book.id %}">Edit</a></button>
+                    </form>
+                {% endif %}
+            </div>
+        <br>
+        </div>
+    {% endfor %}
+{% endblock %}

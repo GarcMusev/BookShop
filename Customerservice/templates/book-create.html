@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/book_create_style.css' %}">
+{% endblock %}
+
+{% block title %}Add book{% endblock %}
+
+{% block logged_in_content %}
+<h2>Add book</h2>
+    <img id="logo" src="{% static 'Books/YLBD_mit_Schrift.png' %}">
+        <div class="logout">
+            <p id="username">Hi {{ user.username }}!</p>
+            <button id="back_btn"><a style="color: #cb997e; text-decoration: none" href={% url 'home' %}>Home</a></button></p>
+            <button id="logout_btn"><a style="color: #cb997e; text-decoration: none" href="{% url 'logout' %}">Logout</a></button>
+        </div>
+
+    {% if not can_delete %}
+        You are not authorized to create books.<br><br>
+    {% endif %}
+    {% if can_delete %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+                     <p>Title: {{ form.title }}</p>
+                     <p>Subtitle: {{ form.subtitle }}</p>
+                     <p>Author: {{ form.author }}</p>
+                     <p>Genre: {{ form.genre }}</p>
+                     <p>Type: {{ form.type }}</p>
+                     <p>Price: {{ form.price }}</p>
+                     <p>Pages: {{ form.pages }}</p>
+                     <p>Date: {{ form.date_published}}</p>
+        <br><br>
+                <div class="right_side_descr">
+                     Description<br>
+                     {{ form.description }}
+                 </div>
+                 <div class="left_side_descr">
+                     Add a Book Cover<br>
+                     {{ form.book_picture }}
+                     <br><br>
+                     Add a pdf<br>
+                     {{ form.book_pdf }}
+                 </div>
+        <button id="add" type="submit">Add book</button> <br> <br>
+    </form>
+    {% endif %}
+{% endblock %}

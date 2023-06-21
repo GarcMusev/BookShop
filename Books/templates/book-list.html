@@ -1,0 +1,46 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Books/book_list_style.css' %}">
+{% endblock %}
+
+{% block title %}
+    Books list
+{% endblock %}  #Titel
+
+{% block content %}
+    <div class="caption">
+        <img id="logo" src="{% static 'Books/YLBD_mit_Schrift.png' %}">
+        <h2 id="überschrift">Book list</h2>
+        <div class="logout">
+            <a id="shopping_cart" style="color: #cb997e" href="{% url 'shopping-cart-show' %}">
+                            Shopping Cart(
+                            {% if user.is_authenticated %}
+                               {{ request.user.count_shopping_cart_items }}
+                            {% else %}
+                                0
+                            {% endif %}
+                             )
+                        </a>
+            <p id="username">Hi {{ user.username }}!</p>
+            <button id="back_btn"><a style="color: #cb997e; text-decoration: none" href={% url 'home' %}>Home</a></button><br>
+            <button id="logout_btn"><a style="color: #cb997e; text-decoration: none" href="{% url 'logout' %}">Logout</a></button>
+        </div>
+    </div>
+
+    <div class="results">
+        <ul>
+        {% for book in all_the_books %}
+            <div class="book_info">
+                <img id="book" src="{% static 'Books/blank_book_brown.png' %}">
+                <br>
+                <a style="color: #fefae0" href="{{ book.id }}"><b>{{ book.title }}</b></a>
+                <p>by {{ book.author }}<br>in {{book.get_type_display}}<br>with {{ book.pages }} pages</p>
+                <img id="this_book"src="{{ book.book_picture.url }}" height="130" width="130"><br>
+            </div>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

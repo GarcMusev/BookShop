@@ -1,0 +1,345 @@
+body{
+    background-color: #606C38;
+    text-align: center;
+
+}
+
+.welcome#introduction{
+    position: relative;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+
+}
+
+.welcome#introduction h3#top{
+    font-size: 80px;
+    color: #fefae0;
+    margin: 0px;
+}
+
+.welcome#introduction h3#sub{
+    font-size: 80px;
+    margin-top: -100px;
+    color: #fefae0;
+    margin-top: -10px;
+}
+
+button{
+    border-radius: 10px;
+    border: 1px solid #95d270;
+    background-color: #fefae0;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.welcome img{
+    position: absolute;
+    top: -30px;
+    left: -40px;
+    width: 300px;
+    height: 300px;
+}
+
+.logout{
+    width: 250px;
+    height: 200px;
+    margin-right: 0px;
+    position: absolute;
+    right:20px;
+    top: 10px;
+}
+
+.logout a#shopping_cart{
+    border: 3px solid #553922;
+    border-radius: 20px;
+    background-color: #fefae0;
+    position: relative;
+    left: 55px;
+    padding: 5px;
+}
+
+.logout p#username{
+    border: 3px solid #553922;
+    border-radius: 20px;
+    width: 120px;
+    background-color: #fefae0;
+    color: #cb997e;
+    font-size: 30px;
+    position: relative;
+    left: 120px;
+}
+
+.logout button#logout_btn {
+    border: 3px solid #553922;
+    border-radius: 20px;
+    font-size: 15px;
+    position: relative;
+    left: 55px;
+    cursor: pointer;
+
+}
+
+.menue{
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    position: relative;
+    font-size: 50px;
+    left: 420px;
+    top: -90px;
+    width: 400px;
+}
+
+img#shelf_left1{
+    width:300px;
+    height:300px;
+    position: absolute;
+    left:-30px;
+    top: 240px;
+}
+img#shelf_right1{
+    transform: scaleX(-1);
+    width:300px;
+    height:300px;
+    position: absolute;
+    right:0px;
+    top: 240px;
+}
+
+img#shelf_left2{
+    width:300px;
+    height:300px;
+    position: absolute;
+    left:-30px;
+    top: 640px;
+}
+img#shelf_right2{
+    transform: scaleX(-1);
+    width:300px;
+    height:300px;
+    position: absolute;
+    right:0px;
+    top: 640px;
+}
+
+img#shelf_left3{
+    width:300px;
+    height:300px;
+    position: absolute;
+    left:-30px;
+    top: 1040px;
+}
+img#shelf_right3{
+    transform: scaleX(-1);
+    width:300px;
+    height:300px;
+    position: absolute;
+    right:0px;
+    top: 1040px;
+}
+
+img#shelf_left4{
+    width:300px;
+    height:300px;
+    position: absolute;
+    left:-30px;
+    top: 1440px;
+}
+img#shelf_right4{
+    transform: scaleX(-1);
+    width:300px;
+    height:300px;
+    position: absolute;
+    right:0px;
+    top: 1440px;
+}
+
+
+.shelf1 button{
+    position: relative;
+    left: 8px;
+    top: 18px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: #fefae0;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 20px 70px;
+    margin: 8px 8px 8px 8px;
+}
+.shelf1 img{
+    width: 80%;
+    height: 10%;
+    position: relative;
+}
+
+.shelf2 button{
+    position: relative;
+    left: 8px;
+    top: 18px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: #fefae0;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 20px 50px;
+    margin: 8px 8px 8px 8px;
+}
+.shelf2 img{
+    width: 80%;
+    height: 10%;
+    position: relative;
+}
+
+.shelf3 button{
+    position: relative;
+    left: 8px;
+    top: 18px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: #fefae0;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 20px 50px;
+    margin: 8px 8px 8px 8px;
+}
+.shelf3 img{
+    width: 80%;
+    height: 10%;
+    position: relative;
+}
+
+.shelf4 button{
+    width: 275px;
+    position: relative;
+    left: 8px;
+    top: 18px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: #fefae0;
+    font-size: 40px;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 8px 8px 8px 8px;
+}
+.shelf4 img{
+    width: 80%;
+    height: 10%;
+    position: relative;
+}
+
+.shelf5 button{
+    width: 275px;
+    position: relative;
+    left: 8px;
+    top: 18px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: #fefae0;
+    font-size: 40px;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 8px 8px 8px 8px;
+}
+.shelf5 img{
+    width: 80%;
+    height: 10%;
+    position: relative;
+}
+
+.shelf6 button{
+    width: 275px;
+    position: relative;
+    left: 8px;
+    top: 18px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: #fefae0;
+    font-size: 40px;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 8px 8px 8px 8px;
+}
+.shelf6 img{
+    width: 80%;
+    height: 10%;
+    position: relative;
+}
+
+.menue p#list{
+    border: 10px inset #95d270;
+    text-align: center;
+}
+
+.menue p#user{
+    border: 10px inset #95d270;
+    text-align: center;
+}
+
+.menue{
+    margin-top: 130px;
+}
+
+
+.login_fail{
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    position: relative;
+    font-size: 50px;
+}
+
+.message{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    color: #fefae0;
+}
+
+.options{
+    border: 5px solid #553922;
+    border-radius: 20px;
+    background-color: #fefae0;
+    position: absolute;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -500px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    text-align: center;
+    color: #cb997e;
+}
+
+.options p#or{
+    position: relative;
+    text-align: center;
+    color: red;
+}
+
+button:hover{
+    background-color: #8c603b;
+}
+
+hr{
+    position: relative;
+    top: -198px;
+    width: 60%;
+    border-radius: 20px;
+    border-top: 10px solid #553922;
+}
+
+img#logo{
+    width: 320px;
+    height: auto;
+    position: absolute;
+    top: 0px;
+    left: -30px;
+}
+
+
+
+
+

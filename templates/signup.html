@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/registration_style.css' %}">
+{% endblock %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+    <div class="top_part">
+        <img id="logo"src="{% static 'Books/YLBD_ohne_Schrift.png' %}">
+        <h2 id="caption">Sign up</h2>
+        <img id="shelf_left"src="{% static 'Books/library_shelf.png' %}">
+        <img id="shelf_right"src="{% static 'Books/library_shelf.png' %}">
+        <img id="shelf_bot_left"src="{% static 'Books/library_shelf.png' %}">
+        <img id="shelf_bot_right"src="{% static 'Books/library_shelf.png' %}">
+    </div>
+
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="user_input" id="registration">
+            {{ form.as_p }}
+            <button type="submit">Accept</button>
+        </div>
+
+    </form>
+{% endblock %}

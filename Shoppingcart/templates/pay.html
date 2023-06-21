@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/shopping_cart_style.css'%}">
+{% endblock %}
+
+{% block title %}Payment{% endblock %}
+
+{% block content %}
+<h2>Payment</h2>
+    <img id="logo" src="{% static 'Books/YLBD_mit_schrift.png' %}">
+    <div class="logout">
+            <p id="username">Hi {{ user.username }}!</p>
+            <button id="back_btn"><a style="color: #cb997e; text-decoration: none" href={% url 'home' %}>Home</a></button></p>
+            <button id="logout_btn"><a style="color: #cb997e; text-decoration: none" href="{% url 'logout' %}">Logout</a></button>
+        </div>
+    {% if paid %}
+        <b style="color: #fefae0">Thank you for your payment.</b><br><br>
+        <a href="{% url 'home'%}">Back to home</a>
+    {% elif shopping_cart_is_empty %}
+        <b style="color: #fefae0">Your shopping cart is empty. There is nothing to pay for.</b><br><br>
+        <a style="color: #cb997e; text-decoration: none; border: 2px solid #553922; background-color: #fefae0; padding: 5px" href="{% url 'book-list'%}">Check out the latest books</a>
+    {% else %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="payment_table">
+                {{ payment_form.as_p }}
+            </div>
+            <input type="hidden" id="shopping_cart_id" name="shopping_cart_id" value="{{ shopping_cart.id }}">
+            <button id="pay" type="submit" name="Pay">Pay</button>
+        </form>
+        <br>
+    {% endif %}
+{% endblock %}

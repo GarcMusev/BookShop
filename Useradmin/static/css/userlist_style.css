@@ -1,0 +1,163 @@
+body{
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    background-color: #606C38;
+    font-size: 20px;
+}
+
+h2{
+    text-align: center;
+    color: #fefae0;
+    font-size: 100px;
+    text-decoration: underline;
+    margin: 0px;
+}
+
+.logout a#shopping_cart{
+    font-size: 15px;
+    border: 3px solid #553922;
+    border-radius: 20px;
+    background-color: #fefae0;
+    position: relative;
+    left: 130px;
+    padding: 5px;
+}
+
+.list{
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.single_user{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
+.single_user img#user_img{
+    background-color: white;
+    border-radius: 100px;
+    position: relative;
+    left: 500px;
+    margin-top: 10px;
+
+}
+
+b#first_name{
+    font-size: 80px;
+    color: #fefae0;
+    position: absolute;
+    right: 760px;
+    top: 25px;
+}
+
+b#last_name{
+    font-size: 80px;
+    color: #fefae0;
+    position: absolute;
+    left: 730px;
+    top: 25px;
+}
+
+b#birthdate{
+    position: relative;
+    left: 285px;
+    top: 0px;
+    font-style: italic;
+    color: black;
+}
+
+b#email{
+    position: relative;
+    left: 553px;
+    font-style: italic;
+    color: black;
+}
+
+.logout{
+    width: 250px;
+    height: 200px;
+    margin-right: 0px;
+    color: white;
+    position: fixed;
+    right:20px;
+    top: 10px;
+}
+
+.logout p#username{
+    border: 3px solid #553922;
+    border-radius: 20px;
+    width: 100px;
+    background-color: #fefae0;
+    color: #8c603b;
+    font-size: 25px;
+    position: relative;
+    left: 145px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button{
+    border-radius: 10px;
+    border: 1px solid #553922;
+    background-color: #fefae0;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.logout button#logout_btn {
+    border: 3px solid #553922;
+    border-radius: 20px;
+    font-size: 20px;
+    position: relative;
+    left: 155px;
+    top: 24px;
+    cursor: pointer;
+
+}
+
+.logout button#back_btn {
+    font-size: 15px;
+    border: 3px solid #553922;
+    border-radius: 20px;
+    position: relative;
+    left: 55px;
+    top: -30px;
+    cursor: pointer;
+    margin-top: 10px;
+
+}
+
+button:hover{
+    background-color: #8c603b;
+}
+
+img#logo{
+    width: 180px;
+    height: 180px;
+    position: fixed;
+    left: 0px;
+    margin-bottom: 0px;
+}
+
+hr{
+    width: 870px;
+    border: 5.5px solid #553922;
+}
+
+.single_user img#book_shelf_1{
+    height:159px;
+    width: 159px;
+    position: absolute;
+    top: 105px;
+    right: 150px;
+}
+
+.single_user img#book_shelf_2{
+    height:159px;
+    width: 159px;
+    position: absolute;
+    top: 105px;
+    left: 110px;
+    transform:scaleX(-1);
+}
